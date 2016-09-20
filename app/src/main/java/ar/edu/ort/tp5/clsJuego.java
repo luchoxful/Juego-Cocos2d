@@ -46,7 +46,14 @@ public class clsJuego {
     }
 
     class CapaDeFondo extends Layer {
-
+        public CapaDeFondo(){
+            PonerImagenFondo();
+        }
+        private void PonerImagenFondo(){
+            ImagenFondo = Sprite.sprite("fondo.png");
+            ImagenFondo.setPosition(PantallaDelDispositivo.width/2, PantallaDelDispositivo.height/2);
+            super.addChild(ImagenFondo);
+        }
     }
     class CapaDelFrente extends Layer{
         public CapaDelFrente(){
@@ -55,7 +62,12 @@ public class clsJuego {
 
         private void PonerNaveJugadorPosicionInicial(){
             NaveJugador=Sprite.sprite("jugador.png");
-            NaveJugador.setPosition(100,300);
+
+            float PosicionInicialX, PosicionInicialY;
+            PosicionInicialX=PantallaDelDispositivo.width/2;
+            PosicionInicialY=NaveJugador.getHeight()/2;
+
+            NaveJugador.setPosition(PosicionInicialX, PosicionInicialY);
             super.addChild(NaveJugador);
         }
 
